@@ -1,4 +1,5 @@
 package part1;
+import part2.Applicant;
 
 public class SimpleIf {
 
@@ -16,6 +17,10 @@ public class SimpleIf {
      * return true if so, false otherwise
      */
 
+    if(avg > threshold)
+    {
+      return true;
+    }
     return false; // A bit pessimistic!
   }
 
@@ -32,7 +37,27 @@ public class SimpleIf {
      * TO DO: Write an if statement to determine which average is larger and return
      * that value.
      */
+    if(avg1>avg2)
+    {
+      return avg1;
+    }
+    else if(avg2>avg1)
+    {
+      return avg2;
+    }
 
     return 0; // Clearly not correct, but testable.
+  }
+
+  public static boolean analyzeApplicant2(Applicant applicant)
+  {
+    if(applicant.ifFail() == true)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
   }
 }

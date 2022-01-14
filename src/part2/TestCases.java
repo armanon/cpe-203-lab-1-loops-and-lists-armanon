@@ -29,7 +29,7 @@ public class TestCases
          new CourseGrade("Operating Systems", 75),
          new CourseGrade("Non-CS", 83)
       );
-      Applicant testApplicant = new Applicant("Aakash", grades);
+      Applicant testApplicant = new Applicant("Aakash", grades, true);
       assertEquals("Aakash", testApplicant.getName());
    }
 
@@ -92,5 +92,21 @@ public class TestCases
             expectedMethodParameters.get(i));
          assertEquals(expectedMethodReturns.get(i), method.getReturnType());
       }
+   }
+
+   @Test
+   public void testGetName1()
+   {
+      // This will not compile until you implement the Applicant class
+      List<CourseGrade> grades = Arrays.asList(
+              new CourseGrade("Intro to CS", 100),
+              new CourseGrade("Data Structures", 95),
+              new CourseGrade("Algorithms", 91),
+              new CourseGrade("Computer Organization", 91),
+              new CourseGrade("Operating Systems", 75),
+              new CourseGrade("Non-CS", 42)
+      );
+      Applicant testApplicant = new Applicant("Aakash", grades, false);
+      assertEquals("Aakash", testApplicant.getName());
    }
 }

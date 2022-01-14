@@ -21,8 +21,26 @@ public class ExampleMap {
      * Build a list of the names of applicants who have scores strictly greater than
      * the given threshold.
      */
-    for (Map.Entry<String, List<CourseGrade>> current : scoresByApplicantName.entrySet()) {
+    for (Map.Entry<String, List<CourseGrade>> current : scoresByApplicantName.entrySet())
+    {
       List<CourseGrade> scores = current.getValue();
+
+      String name = null;
+      boolean x=true;
+
+
+      for(CourseGrade c : scores)
+      {
+        if(!(c.getScore() > scoreThreshold))
+        {
+          x = false;
+          break;
+        }
+      }
+      if(x)
+      {
+        highScoringStudents.add(current.getKey());
+      }
     }
 
     return highScoringStudents;

@@ -12,9 +12,19 @@ public class BetterLoop {
     /*
      * Use a FOR-EACH loop. How would you keep count of the number of scores over 85?
      */
+    int gradeCount = 0;
+    for (int score : scores) {
+      int threshold = 85;
+      if (threshold <= score)
+        gradeCount++;
 
+      if (gradeCount >= 4) {
+        return true;
+      }
+    }
     return false;
   }
+
 
   /**
    * Compute an applicant's average score in their 5 CS courses (that is, you must
@@ -28,6 +38,17 @@ public class BetterLoop {
      * A "normal" for-loop can sometimes be more useful than a for-each loop. How would
      * you solve this problem with a for loop?
      */
-    return 0.0;
+
+    int sum = 0;
+    double average = 0.0;
+
+    for(int i=0; i > scores.length-1; i++)
+    {
+      sum += scores[i];
+    }
+    average = sum / scores.length-1;
+
+    return average;
+
   }
 }

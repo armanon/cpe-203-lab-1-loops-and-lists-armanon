@@ -27,10 +27,8 @@ public class TestCases
    }
 
    @Test
-   public void testAnalyzeApplicant3()
-   {
-      fail("Missing testAnalyzeApplicant3");
-      /* TO DO: Write one more valid test case. */
+   public void testAnalyzeApplicant3() {
+     assertFalse(SimpleIf.analyzeApplicant(18,53));
    }
 
    @Test
@@ -45,8 +43,7 @@ public class TestCases
 
    @Test
    public void testMaxAverage3() {
-      fail("Missing testMaxAverage3");
-      /* TO DO: Write one more valid test case. */
+      assertEquals(SimpleIf.maxAverage(42, 49), 49, DELTA);
    }
 
    ////////////////////////////////////////////////////////////
@@ -68,9 +65,8 @@ public class TestCases
    @Test
    public void testSimpleLoop3()
    {
-      fail("Missing SimpleLoop3");
-      /* TO DO: Write one more valid test case to make sure that
-         this function is not just returning 7. */
+      assertEquals(9, SimpleLoop.sum(-1, 4));
+
    }
 
    ////////////////////////////////////////////////////////////
@@ -99,8 +95,9 @@ public class TestCases
    @Test
    public void testSimpleArray3()
    {
-      fail("Missing SimpleArray3");
-      /* TO DO: Add a new test case. */
+      assertArrayEquals(
+              new boolean[] {false, false, false, true, true, true},
+              SimpleArray.applicantAcceptable(new int[] {60, 53, 85, 90, 98, 100}, 85));
    }
 
    ////////////////////////////////////////////////////////////
@@ -121,8 +118,12 @@ public class TestCases
    @Test
    public void testSimpleList2()
    {
-      fail("Missing SimpleList2");
-      /* TO DO: Add a new test case. */
+      List<Integer> input =
+              new LinkedList<Integer>(Arrays.asList(new Integer[] {96, 82, 89, 34, 99, 83}));
+      List<Boolean> expected =
+              new ArrayList<Boolean>(Arrays.asList(new Boolean[] {true, false, true, false, true, false}));
+
+      assertEquals(expected, SimpleList.applicantAcceptable(input, 85));
    }
 
    ////////////////////////////////////////////////////////////

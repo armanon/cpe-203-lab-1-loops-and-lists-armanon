@@ -20,7 +20,7 @@ public class SimpleArray {
      * length of an array is accessible through an array's length field (e.g.,
      * values.length).
      */
-    boolean[] highScores = new boolean[6];
+    boolean[] highScores = new boolean[scores.length];
 
     /*
      * TO DO: The output array, highScores, should hold as its elements the
@@ -29,6 +29,30 @@ public class SimpleArray {
      * Write a loop to compute the acceptability of the scores based on the
      * threshold and place the result into into the output array.
      */
+
+    /*
+    for(int i=0; i<scores.length; i++)
+    {
+      if(scores[i] > 85)
+      {
+          scores[i] = highScores(false);
+      }
+      scores[i] = true;
+
+    }
+    */
+    for(int i=0; i<scores.length; i++)
+    {
+      if(threshold > scores[i] || threshold == scores[i]) {
+        highScores[i] = false;
+      }
+        else if(threshold < scores[i]) {
+        highScores[i] = true;
+      }
+
+    }
+
+
     return highScores;
   }
 }
